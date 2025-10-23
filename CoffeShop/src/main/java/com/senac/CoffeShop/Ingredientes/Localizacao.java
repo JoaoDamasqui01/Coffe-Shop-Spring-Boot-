@@ -1,4 +1,6 @@
 package com.senac.CoffeShop.Ingredientes;
 
-public class Localizacao {
+public enum Localizacao {
+
+    ARMÁRIO, GELADEIRA, FRIZZER
 }
