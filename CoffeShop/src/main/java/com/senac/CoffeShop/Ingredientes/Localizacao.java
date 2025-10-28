@@ -2,7 +2,7 @@ package com.senac.CoffeShop.Ingredientes;
 
 public enum Localizacao {
 
-    Armario,
+    Armário,
     Geladeira,
     Frizzer
 }

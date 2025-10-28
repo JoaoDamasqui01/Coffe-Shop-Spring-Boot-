@@ -8,9 +8,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.naming.Name;
+import java.math.BigDecimal;
 
-@Table(name = "EstoqueIngredientes")
-@Entity(name = "EstoqueIngredientes")
+@Table(name = "Ingredientes")
+@Entity(name = "Ingredientes")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,12 +21,12 @@ public class Ingredientes {
    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long idIngrediente;
    private String nome;
-   private String fornercedor;
+   private String fornecedor;
 
    @Enumerated(EnumType.STRING)
    private UnidadeMedida unidadeMedida;
 
-   private Long precoCusto;
+   private BigDecimal precoCusto;
    private int pontoPedido;
 
    private Long quantidade;
@@ -33,14 +34,14 @@ public class Ingredientes {
    @Enumerated(EnumType.STRING)
    private Localizacao locali;
 
+
    public Ingredientes(DadosCadastroIngrediente dados) {
       this.nome = dados.nome();
-      this.fornercedor = dados.fornecedor();
+      this.fornecedor = dados.fornecedor();
       this.unidadeMedida = dados.unidadeMedida();
       this.precoCusto = dados.precoCusto();
       this.quantidade = dados.quantidade();
       this.locali = dados.locali();
       //Conversar com o Professor sobre UnidadeMedida no RECORD
-
    }
 }
