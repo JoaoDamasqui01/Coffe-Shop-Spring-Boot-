@@ -1,5 +1,6 @@
 package com.senac.CoffeShop.Controller;
 
+import com.senac.CoffeShop.Ingredientes.DadosAtualizarIngrediente;
 import com.senac.CoffeShop.Ingredientes.DadosCadastroIngrediente;
 import com.senac.CoffeShop.Ingredientes.DadosListagemIngredientes;
 import com.senac.CoffeShop.Ingredientes.Ingredientes;
@@ -33,6 +34,19 @@ public class IngredientesControllerTeste {
                 .map(DadosListagemIngredientes::new)
                 .collect(java.util.stream.Collectors.toList());
 
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizarIngrediente dadosAtualizar){
+        var ingrediente = repository.getReferenceById(dadosAtualizar.id());
+        ingrediente.atualizarIngrediente(dadosAtualizar);
+    }
+
+    @DeleteMapping("/{idIngrediente}")
+    @Transactional
+    public void deletar(@PathVariable Long idIngrediente){
+        repository.deleteById(idIngrediente);
     }
 
 }
