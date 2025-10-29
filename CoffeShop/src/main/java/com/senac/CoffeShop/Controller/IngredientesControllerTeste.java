@@ -2,6 +2,7 @@ package com.senac.CoffeShop.Controller;
 
 import com.senac.CoffeShop.Ingredientes.DadosAtualizarIngrediente;
 import com.senac.CoffeShop.Ingredientes.DadosCadastroIngrediente;
+
 import com.senac.CoffeShop.Ingredientes.DadosListagemIngredientes;
 import com.senac.CoffeShop.Ingredientes.Ingredientes;
 import com.senac.CoffeShop.Repository.IngredientesRepository;
@@ -12,9 +13,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+<<<<<<< HEAD
 
 @RestController
 @RequestMapping("/ingredientes")
+=======
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/Ingredientes")
+>>>>>>> bcc63f9469472ed14fc94a1daf052c55bcfd6962
 public class IngredientesControllerTeste {
 
     @Autowired
@@ -27,6 +35,7 @@ public class IngredientesControllerTeste {
     }
 
     @GetMapping
+<<<<<<< HEAD
     @Transactional
     public List<DadosListagemIngredientes> listar(){
         List<Ingredientes> listaEntidades = repository.findAll();
@@ -49,4 +58,26 @@ public class IngredientesControllerTeste {
         repository.deleteById(idIngrediente);
     }
 
+=======
+    public List<DadosListagemIngredientes> listar() {
+
+      return repository.findAll() // Chama o findAll() sem argumentos, que retorna List<Ingredientes>
+                .stream()
+              .map(DadosListagemIngredientes::new) // Converte cada Entidade para o DTO
+            .collect(Collectors.toList());      // Coleta o resultado em uma lista
+    }
+
+    //@PutMapping
+    //@Transactional
+    //public void atualizar(@RequestBody @Valid DadosAtualizacaoMedico dados){
+      //  var medico = repository.getReferenceById(dados.id());
+        //medico.atualizarInformacoes(dados);
+    //}
+
+    //@DeleteMapping("/{id}") //parametro dinamico
+    //@Transactional
+    //public void excluir(@PathVariable Long id){ // Anotacao para receber o parametro dinamico
+    //  repository.deleteById(id);
+    //}
+>>>>>>> bcc63f9469472ed14fc94a1daf052c55bcfd6962
 }

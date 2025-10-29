@@ -1,5 +1,6 @@
 package com.senac.CoffeShop.Ingredientes;
 
+<<<<<<< HEAD
 import java.math.BigDecimal;
 
 public record DadosListagemIngredientes(Long id,
@@ -16,4 +17,13 @@ public record DadosListagemIngredientes(Long id,
     }
 
 
+=======
+public record DadosListagemIngredientes(Long id, String nome, Long precoCusto, String fornecedor, int quantidade, Localizacao locali, UnidadeMedida unidademedida) {
+
+    public DadosListagemIngredientes(Ingredientes ingredientes){
+        this(ingredientes.getIdIngrediente(), ingredientes.getNome(), ingredientes.getPrecoCusto(),
+                ingredientes.getFornercedor(), ingredientes.getQuantidade(), ingredientes.getLocali(),
+                ingredientes.getUnidadeMedida());
+    }
+>>>>>>> bcc63f9469472ed14fc94a1daf052c55bcfd6962
 }
