@@ -9,18 +9,14 @@ import com.senac.CoffeShop.Repository.IngredientesRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
 @RequestMapping("/ingredientes")
-
-import java.util.stream.Collectors;
-
-
 public class IngredientesControllerTeste {
 
     @Autowired
@@ -33,7 +29,6 @@ public class IngredientesControllerTeste {
     }
 
     @GetMapping
-
     @Transactional
     public List<DadosListagemIngredientes> listar(){
         List<Ingredientes> listaEntidades = repository.findAll();
