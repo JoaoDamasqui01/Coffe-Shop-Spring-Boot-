@@ -46,26 +46,26 @@ public class IngredientesControllerTeste {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/{id_Ingrediente}") // CHAVE NA URL: {id}
+    @PutMapping("/{idIngrediente}")
     @Transactional
     public ResponseEntity<Ingredientes> atualizar(
-            // Variável no método: id
-            @PathVariable Long id,
+            // O nome do parâmetro (@PathVariable) deve corresponder ao nome na URL ({idIngrediente})
+            @PathVariable Long idIngrediente,
             @RequestBody @Valid DadosAtualizarIngrediente dados
     ) {
-        // Busca a entidade pelo ID.
-        // Se encontrar (.map), atualiza e retorna 200 OK.
-        // Se não encontrar (.orElseGet), retorna 404 Not Found.
-        return repository.findById(id)
+        // 1. Busca o ingrediente pelo ID. Retorna um Optional.
+        return repository.findById(idIngrediente)
                 .map(ingrediente -> {
-                    ingrediente.atualizarInformacoes(dados); // Use o nome correto do seu método!
+                    // 2. Se o ingrediente for encontrado:
+                    ingrediente.atualizarInformacoes(dados);
+                    // 3. Retorna 200 OK com o objeto atualizado no corpo.
                     return ResponseEntity.ok(ingrediente);
                 })
-                .orElseGet(() -> ResponseEntity.notFound().build());
+                .orElseGet(() ->
+                        // 4. Se o ingrediente NÃO for encontrado: Retorna 404 Not Found.
+                        ResponseEntity.notFound().build()
+                );
     }
-
-
-
 
 
 
