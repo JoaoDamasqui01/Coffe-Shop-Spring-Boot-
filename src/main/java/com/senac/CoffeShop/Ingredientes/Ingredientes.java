@@ -3,7 +3,6 @@ package com.senac.CoffeShop.Ingredientes;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Positive;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -19,9 +18,13 @@ import java.math.BigDecimal;
 public class Ingredientes {
 
    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column(name = "id_Ingrediente")
    private long idIngrediente;
    private String nome;
+
+   @Column(name = "preco_custo")
    private BigDecimal precoCusto;
+
    private String fornecedor;
    private Long quantidade;
 
@@ -29,23 +32,25 @@ public class Ingredientes {
    private Localizacao localizacao;
 
    @Enumerated(EnumType.STRING)
+   @Column(name = "unidade_medida")
    private UnidadeMedida unidadeMedida;
 
+    @Column(name = "ponto_Pedido")
    private Long pontoPedido;
 
 
    public Ingredientes(DadosCadastroIngrediente dados) {
       this.nome = dados.nome();
-      this.fornecedor = dados.fornecedor();
-      this.unidadeMedida = dados.unidadeMedida();
+      this.precoCusto = dados.precoCusto();
       this.fornecedor = dados.fornecedor();
       this.unidadeMedida = dados.unidadeMedida();
       this.localizacao = dados.localizacao();
       this.quantidade = dados.quantidade();
+      this.pontoPedido = dados.pontoPedido();
       //Conversar com o Professor sobre UnidadeMedida no RECORD
    }
 
-   public void atualizarIngrediente(@Valid DadosAtualizarIngrediente dados) {
+   public void atualizarInformacoes(@Valid DadosAtualizarIngrediente dados) {
 
       if (dados.nome() != null && !dados.nome().trim().isEmpty()) {
          this.nome = dados.nome();
@@ -64,7 +69,7 @@ public class Ingredientes {
       }
 
       // 4. Ponto de Pedido (garantir que é um valor válido, ex: positivo)
-      if (dados.pontoPedido() != null && dados.pontoPedido() >= 0) {
+      if (dados.pontoPedido() != null && dados.pontoPedido() > 0) {
          this.pontoPedido = dados.pontoPedido();
       }
 

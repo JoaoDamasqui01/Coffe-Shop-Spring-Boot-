@@ -9,13 +9,14 @@ import com.senac.CoffeShop.Repository.IngredientesRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
 @RestController
-@RequestMapping("/ingredientes")
+@RequestMapping("/Ingredientes")
 public class IngredientesControllerTeste {
 
     @Autowired
@@ -37,26 +38,36 @@ public class IngredientesControllerTeste {
 
     }
 
-    @PutMapping
-    @Transactional
-    public void atualizar(@RequestBody @Valid DadosAtualizarIngrediente dadosAtualizar){
-        var ingrediente = repository.getReferenceById(dadosAtualizar.id());
-        ingrediente.atualizarIngrediente(dadosAtualizar);
-    }
 
     @DeleteMapping("/{idIngrediente}")
     @Transactional
-    public void deletar(@PathVariable Long idIngrediente){
+    public ResponseEntity<Void> deletar(@PathVariable Long idIngrediente){
         repository.deleteById(idIngrediente);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id_Ingrediente}") // CHAVE NA URL: {id}
+    @Transactional
+    public ResponseEntity<Ingredientes> atualizar(
+            // Variável no método: id
+            @PathVariable Long id,
+            @RequestBody @Valid DadosAtualizarIngrediente dados
+    ) {
+        // Busca a entidade pelo ID.
+        // Se encontrar (.map), atualiza e retorna 200 OK.
+        // Se não encontrar (.orElseGet), retorna 404 Not Found.
+        return repository.findById(id)
+                .map(ingrediente -> {
+                    ingrediente.atualizarInformacoes(dados); // Use o nome correto do seu método!
+                    return ResponseEntity.ok(ingrediente);
+                })
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
 
-    //@PutMapping
-    //@Transactional
-    //public void atualizar(@RequestBody @Valid DadosAtualizacaoMedico dados){
-      //  var medico = repository.getReferenceById(dados.id());
-        //medico.atualizarInformacoes(dados);
-    //}
+
+
+
 
     //@DeleteMapping("/{id}") //parametro dinamico
     //@Transactional
