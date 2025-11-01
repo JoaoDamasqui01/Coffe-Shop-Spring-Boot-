@@ -1,5 +1,8 @@
 package com.senac.CoffeShop.Controller;
 
+import com.senac.CoffeShop.DTO.DadosAtualizarIngrediente;
+import com.senac.CoffeShop.DTO.DadosCadastroIngrediente;
+import com.senac.CoffeShop.DTO.DadosListagemIngredientes;
 import com.senac.CoffeShop.Ingredientes.*;
 
 import com.senac.CoffeShop.Repository.IngredientesRepository;
@@ -14,12 +17,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Ingredientes")
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin
 public class IngredientesControllerTeste {
 
     @Autowired
     private  IngredientesRepository repository;
-
 
     @PostMapping
     @Transactional
@@ -27,14 +29,11 @@ public class IngredientesControllerTeste {
         repository.save(new Ingredientes(dados));
     }
 
-    @GetMapping("/{idIngrediente}")
+    @GetMapping
     @Transactional
     public List<DadosListagemIngredientes> listar(){
-        List<Ingredientes> listaEntidades = repository.findAll();
-        return listaEntidades.stream()
-                .map(DadosListagemIngredientes::new)
-                .collect(java.util.stream.Collectors.toList());
-
+        List<DadosListagemIngredientes> ingredientesList = repository.findAll().stream().map(DadosListagemIngredientes:: new).toList();
+        return ingredientesList;
     }
 
 
@@ -45,32 +44,19 @@ public class IngredientesControllerTeste {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/{idIngrediente}") // CHAVE NA URL: {id}
+
+    @PutMapping("/{idIngrediente}")
     @Transactional
-    public ResponseEntity<Ingredientes> atualizar(
-            // Variável no método: id
-            @PathVariable Long idIngrediente,
-            @RequestBody @Valid DadosAtualizarIngrediente dados
+    public ResponseEntity<DadosListagemIngredientes> atualizar(
+            @PathVariable Long idIngrediente, // ID para buscar quem será atualizado
+            @RequestBody @Valid DadosAtualizarIngrediente dados // Dados para alteração
     ) {
-        // Busca a entidade pelo ID.
-        // Se encontrar (.map), atualiza e retorna 200 OK.
-        // Se não encontrar (.orElseGet), retorna 404 Not Found.
-        return repository.findById(idIngrediente)
-                .map(ingrediente -> {
-                    ingrediente.atualizarInformacoes(dados); // Use o nome correto do seu método!
-                    return ResponseEntity.ok(ingrediente);
-                })
-                .orElseGet(() -> ResponseEntity.notFound().build());
+        Ingredientes ingrediente = repository.getReferenceById(idIngrediente);
+
+        ingrediente.atualizarInformacoes(dados);
+
+        return ResponseEntity.ok(new DadosListagemIngredientes(ingrediente));
     }
 
 
-
-
-
-
-    //@DeleteMapping("/{id}") //parametro dinamico
-    //@Transactional
-    //public void excluir(@PathVariable Long id){ // Anotacao para receber o parametro dinamico
-    //  repository.deleteById(id);
-    //}
 }
