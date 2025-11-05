@@ -24,7 +24,6 @@ public record DadosCadastroIngrediente(
         @Size(min = 5, max = 100, message = "O fornecedor deve ter entre 5 e 100 caracteres.")
         String fornecedor,
 
-
         @NotNull(message = "a quantidade para novos pedidos é obrigatório.")
         @Positive(message = "a quantidade deve ser positivo.")
         Long pontoPedido,
