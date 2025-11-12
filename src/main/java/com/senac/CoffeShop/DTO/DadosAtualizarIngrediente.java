@@ -1,13 +1,13 @@
-package com.senac.CoffeShop.Ingredientes;
+package com.senac.CoffeShop.DTO;
 
+import com.senac.CoffeShop.Ingredientes.Localizacao;
+import com.senac.CoffeShop.Ingredientes.UnidadeMedida;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 
 public record DadosAtualizarIngrediente(
-
 
         String nome, // Não precisa de @NotBlank, pois a alteração é opcional
 

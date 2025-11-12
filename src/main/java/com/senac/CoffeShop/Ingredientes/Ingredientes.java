@@ -1,6 +1,8 @@
 package com.senac.CoffeShop.Ingredientes;
 
 
+import com.senac.CoffeShop.DTO.DadosAtualizarIngrediente;
+import com.senac.CoffeShop.DTO.DadosCadastroIngrediente;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.*;
@@ -18,26 +20,32 @@ import java.math.BigDecimal;
 public class Ingredientes {
 
    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-   @Column(name = "id_Ingrediente")
+   @Column(name = "idIngrediente")
    private long idIngrediente;
+
+   @Column(name = "nome")
    private String nome;
 
    @Column(name = "preco_custo")
    private BigDecimal precoCusto;
 
+   @Column(name = "fornecedor")
    private String fornecedor;
+
+   @Column(name = "quantidade")
    private Long quantidade;
 
+
    @Enumerated(EnumType.STRING)
+   @Column(name = "localizacao")
    private Localizacao localizacao;
 
    @Enumerated(EnumType.STRING)
    @Column(name = "unidade_medida")
    private UnidadeMedida unidadeMedida;
 
-    @Column(name = "ponto_Pedido")
+   @Column(name = "ponto_pedido")
    private Long pontoPedido;
-
 
    public Ingredientes(DadosCadastroIngrediente dados) {
       this.nome = dados.nome();

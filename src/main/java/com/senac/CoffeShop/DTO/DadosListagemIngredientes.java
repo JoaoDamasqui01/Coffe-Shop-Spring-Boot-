@@ -1,4 +1,8 @@
-package com.senac.CoffeShop.Ingredientes;
+package com.senac.CoffeShop.DTO;
+
+import com.senac.CoffeShop.Ingredientes.Ingredientes;
+import com.senac.CoffeShop.Ingredientes.Localizacao;
+import com.senac.CoffeShop.Ingredientes.UnidadeMedida;
 
 import java.math.BigDecimal;
 
