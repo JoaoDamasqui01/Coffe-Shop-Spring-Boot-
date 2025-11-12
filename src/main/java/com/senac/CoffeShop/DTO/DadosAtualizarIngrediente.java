@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 
 public record DadosAtualizarIngrediente(
 
-
         String nome, // Não precisa de @NotBlank, pois a alteração é opcional
 
         BigDecimal precoCusto,
