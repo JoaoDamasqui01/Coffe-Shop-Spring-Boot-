@@ -1,1 +1,1 @@
-vai para a branch "CORRECAO" lá está todas as instruções de como rodar o programa  
+vai para a branch "correcao" lá está todas as instruções de como rodar o programa  
