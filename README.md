@@ -19,7 +19,41 @@ CREATE TABLE IF NOT EXISTS `coffe_shop_system`.`ingredientes` (
 
   2 Passo: Clonar Repositorio 
   Executar o comando do git para clonar o repositório na pasta especifica que vai conter o repositório, precisa conter a URL do projeto
+  comando: "git clone https://github.com/JoaoDamasqui01/Coffe-Shop-Spring-Boot-"
+
+3 Passo: Abrir o código na IDE de preferência
+
+4 Passo: Abrir um novo terminal "Git Bash"
+  Realizar os seguintes comandos:
+      1. "git branch -r", ira trazer todas as branch(Versões existente no GitHub)
+      2. "git checkout correcao", ira fazer você entra na versão de correcão, não se assuste ira trazer todos arquivos da branch.
+
+5 Passo: Abra as seguinte estruturas de pastas que irei listas
+      coffeShop
+          |__src
+              |__main
+                  |__java
+                      |__com.senac.CoffeShopp
+    Dentro de "com.senac.CoffeShopp" está todas as informações do código, abra o ultimo arquivo "CoffeShopApplication" e dentro do arquivo está a chamando a aplicação para rodar. Quando tiver pronto o arquivo "application.properties" volte nela.
+
+6 Passo: Na pasta recurces>application.properties dentro dela mude pequena configurações para permitir a conexão e suas interações com o banco de dados 
+
+  Encaminha para o banco de dados correto localhost da sua máquina
+  spring.datasource.url=jdbc:mysql://localhost:3307/coffe_shop_system
+
+  Credencias do banco como senha e nome do user, altere se tiver log de erro de JPA
+  spring.datasource.username="USER LOCAL"
+  spring.datasource.password="SENHA LOCAL"
+
+  Dependendo da ocasição de mude o numero da porta(mas é definido por padrão)
+    spring.port:8080
+
+7 Passo: faça download de algumas ferramentas de teste de API 
+  Pode realizar as requisições HTTP para realizar o CRUD: Create (Criar), Read (Ler), Update (Atualizar) e Delete (Excluir) por meio
+  
 
   
 
+      
+    
   
