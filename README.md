@@ -29,11 +29,7 @@ CREATE TABLE IF NOT EXISTS `coffe_shop_system`.`ingredientes` (
       2. "git checkout correcao", ira fazer você entra na versão de correcão, não se assuste ira trazer todos arquivos da branch.
 
 5 Passo: Abra as seguinte estruturas de pastas que irei listas
-      coffeShop
-          |__src
-              |__main
-                  |__java
-                      |__com.senac.CoffeShopp
+      coffeShop > src > main > java > com.senac.CoffeShopp
     Dentro de "com.senac.CoffeShopp" está todas as informações do código, abra o ultimo arquivo "CoffeShopApplication" e dentro do arquivo está a chamando a aplicação para rodar. Quando tiver pronto o arquivo "application.properties" volte nela.
 
 6 Passo: Na pasta recurces>application.properties dentro dela mude pequena configurações para permitir a conexão e suas interações com o banco de dados 
@@ -49,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `coffe_shop_system`.`ingredientes` (
     spring.port:8080
 
 7 Passo: faça download de algumas ferramentas de teste de API 
-  Pode realizar as requisições HTTP para realizar o CRUD: Create (Criar), Read (Ler), Update (Atualizar) e Delete (Excluir) por meio
+  Pode realizar as requisições HTTP para realizar o CRUD: Create (Criar), Read (Ler), Update (Atualizar) e Delete (Excluir) por meio, durante o desenvolvimento utilizei o postman para fazer as requisições 
   
 
   
