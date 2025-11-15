@@ -1,4 +1,4 @@
-#SISTEMA DE GERENCIAMENTO DE ESTOQUE
+SISTEMA DE GERENCIAMENTO DE ESTOQUE
 
 A API foi desenvolvida utilizando o Spring Boot, que acelerou a criação de endpoints robustos e eficientes para o gerenciamento de recursos, como ingredientes. O framework forneceu a estrutura essencial para a camada de persistência (Spring Data JPA) e a definição de controllers RESTful, garantindo a organização do projeto e o cumprimento das boas práticas de desenvolvimento backend. Todo o ciclo de desenvolvimento, desde a implementação de novas funcionalidades até a correção de bugs de mapeamento (como a conversão de camelCase para snake_case do Hibernate), foi gerenciado com o Git. O domínio de comandos Git foi fundamental para o controle de versão, permitindo a integração segura de código e a resolução de conflitos (merge conflicts) de forma colaborativa, assegurando a rastreabilidade e a estabilidade da base de código finalizada. Vamos seguir os passos seguintes para executar a API em sua maquina local.
 
