@@ -42,8 +42,15 @@ Dependendo da ocasição de mude o numero da porta, mas é definido por padrão 
     }
  Read (Ler): http://localhost:8080/Ingredientes
  Update (Atualizar): http://localhost:8080/Ingredientes/19(Informar um ID)
+ 
+ {
+	"nome": "Asafrão",
+    "fornecedor": "Ingredientes"
+}
+
  Delete (Excluir): http://localhost:8080/Ingredientes/4(informar um ID)
 
+8 Passo: Dentro desses passos é capaz de realizar todas as aplicação inteira.
 
 
 
