@@ -28,11 +28,11 @@ CREATE TABLE IF NOT EXISTS coffe_shop_system.ingredientes (
 ````
 
 ### 2. Clonar Repositório
-
+Para clonar o Repósitorio basta apenas colar e copiar a URL 
 Execute o comando do Git para clonar o repositório na pasta específica:
 
 ```bash
-git clone [https://github.com/JoaoDamasqui01/Coffe-Shop-Spring-Boot-] (https://github.com/JoaoDamasqui01/Coffe-Shop-Spring-Boot-) 
+git clone https://github.com/JoaoDamasqui01/Coffe-Shop-Spring-Boot- (https://github.com/JoaoDamasqui01/Coffe-Shop-Spring-Boot-) 
 ```
 
 ### 3. Abrir o Código e Mudar de Branch
