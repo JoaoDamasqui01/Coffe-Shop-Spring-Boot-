@@ -70,7 +70,7 @@ Faça o download do **Postman** (ou similar) para realizar as requisições HTTP
   * **Body (JSON):**
     ````json
     {
-        "nome": "Café em Prem",
+        "nome": "Café Orfeu",
         "fornecedor": "Torrefação Aroma Forte",
         "unidadeMedida": "KG",
         "precoCusto": 65.00,
@@ -93,8 +93,8 @@ Faça o download do **Postman** (ou similar) para realizar as requisições HTTP
   * **Body (JSON):**
     ````json
     {
-        "nome": "Asafrão",
-        "fornecedor": "Ingredientes"
+        "nome": "Café Gourmet Eva",
+        "fornecedor": "3 Corações"
     }
 
     ````
