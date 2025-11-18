@@ -1,29 +1,20 @@
-Minhas sinceras desculpas\! Parece que houve um mal-entendido na entrega. Você está absolutamente correto, para que o texto seja utilizável no GitHub, **todo o conteúdo** deve estar dentro de um único bloco de código Markdown.
-
-Vou fornecer o arquivo **inteiro** em um **único bloco de código** para que você possa copiar e colar diretamente no seu arquivo `README.md`.
-
-````markdown
 # ☕ Sistema de Gerenciamento de Estoque (API Spring Boot)
 
-[cite_start]A API foi desenvolvida utilizando o **Spring Boot**, que acelerou a criação de endpoints robustos e eficientes para o gerenciamento de recursos, como ingredientes[cite: 2].
+A API foi desenvolvida utilizando o **Spring Boot**, que acelerou a criação de endpoints robustos e eficientes para o gerenciamento de recursos, como ingredientes. O framework forneceu a estrutura essencial para a camada de persistência (**Spring Data JPA**) e a definição de **controllers RESTful**, garantindo a organização do projeto e o cumprimento das boas práticas de desenvolvimento backend. Todo o ciclo de desenvolvimento foi gerenciado com o **Git**, permitindo a implementação de novas funcionalidades e a correção de bugs de mapeamento (como a conversão de `camelCase` para `snake_case` do Hibernate). O domínio de comandos Git foi fundamental para o **controle de versão**, permitindo a integração segura de código e a resolução de conflitos (`merge conflicts`) de forma colaborativa [cite: 5][cite_start], assegurando a rastreabilidade e a estabilidade da base de código finalizada[cite: 5].
 
-[cite_start]O framework forneceu a estrutura essencial para a camada de persistência (**Spring Data JPA**) e a definição de **controllers RESTful**, garantindo a organização do projeto e o cumprimento das boas práticas de desenvolvimento backend[cite: 3].
 
-[cite_start]Todo o ciclo de desenvolvimento foi gerenciado com o **Git** [cite: 4][cite_start], permitindo a implementação de novas funcionalidades e a correção de bugs de mapeamento (como a conversão de `camelCase` para `snake_case` do Hibernate)[cite: 4]. [cite_start]O domínio de comandos Git foi fundamental para o **controle de versão**, permitindo a integração segura de código e a resolução de conflitos (`merge conflicts`) de forma colaborativa [cite: 5][cite_start], assegurando a rastreabilidade e a estabilidade da base de código finalizada[cite: 5].
-
----
 
 ## 🚀 Passos para Executar a API Localmente
 
-[cite_start]Siga os passos seguintes para executar a API em sua máquina local[cite: 6].
+Siga os passos seguintes para executar a API em sua máquina local.
 
 ### 1. Configuração do Banco de Dados (SGBD)
 
-[cite_start]Execute o script para a criação do schema e tabela do banco de dados no SGBD (Sistema de Gerenciamento de Banco de Dados) de sua preferência[cite: 7]:
+Execute o script para a criação do schema e tabela do banco de dados no SGBD (Sistema de Gerenciamento de Banco de Dados) de sua preferência:
 
 ```sql
 CREATE SCHEMA IF NOT EXISTS coffe_shop_system;
-[cite_start]USE coffe_shop_system; [cite: 8]
+USE coffe_shop_system; 
 
 CREATE TABLE IF NOT EXISTS coffe_shop_system.ingredientes (
     idIngrediente INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -34,12 +25,12 @@ CREATE TABLE IF NOT EXISTS coffe_shop_system.ingredientes (
     ponto_pedido INT NULL DEFAULT NULL,
     quantidade DECIMAL(10,3) NOT NULL DEFAULT '0.000',
     localizacao ENUM('ARMÁRIO', 'GELADEIRA', 'FRIZZER') NULL DEFAULT NULL
-[cite_start]); [cite: 9]
+);
 ````
 
-### 2\. Clonar Repositório
+### 2. Clonar Repositório
 
-[cite\_start]Execute o comando do Git para clonar o repositório na pasta específica[cite: 10]:
+[cite\_start]Execute o comando do Git para clonar o repositório na pasta específica:
 
 ```bash
 [cite_start]git clone [https://github.com/JoaoDamasqui01/Coffe-Shop-Spring-Boot-](https://github.com/JoaoDamasqui01/Coffe-Shop-Spring-Boot-) [cite: 10]
