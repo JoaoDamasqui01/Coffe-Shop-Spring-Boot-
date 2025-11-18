@@ -78,7 +78,6 @@ Faça o download do **Postman** (ou similar) para realizar as requisições HTTP
         "quantidade": 25,
         "localizacao": "ARMÁRIO"
     }
-    ``` 
 
     ````
 
@@ -96,7 +95,7 @@ Faça o download do **Postman** (ou similar) para realizar as requisições HTTP
     {
         "nome": "Asafrão",
         "fornecedor": "Ingredientes"
-    }``` 
+    }
 
     ````
 
