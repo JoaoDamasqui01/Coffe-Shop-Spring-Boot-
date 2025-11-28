@@ -40,7 +40,7 @@ git clone https://github.com/JoaoDamasqui01/Coffe-Shop-Spring-Boot- (https://git
 1.  Abra o código na **IDE** de sua preferência.
 2.  Abra um novo terminal (**Git Bash**)  e realize os seguintes comandos:
       * `git branch -r`: Irá trazer todas as *branchs* (versões existentes no GitHub).
-      * `git checkout correcao`: Irá fazer você entrar na versão de correção, que é a versão final com a API funcional.
+      * `git checkout correcao`: Irá fazer você entrar na versão de "correcao", que é a versão final com a API funcional.
 
 ### 4. Inicialização da Aplicação
 
