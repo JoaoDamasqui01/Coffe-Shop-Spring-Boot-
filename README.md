@@ -106,7 +106,7 @@ Faça o download do **Postman** (ou similar) para realizar as requisições HTTP
 
 -----
 
-🎉 Dentro desses passos é capaz de realizar todas as aplicação inteira
+🎉 Dentro desses passos é capaz de realizar todas as ações HTTP da aplicação
 
 
 
